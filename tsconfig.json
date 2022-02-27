@@ -22,6 +22,5 @@
       "@interfaces/*": ["interfaces/*"]
     }
   },
-  "exclude": ["build", "tests", "node_modules"],
   "include": ["src/**/*.ts"]
 }

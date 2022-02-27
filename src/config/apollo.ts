@@ -26,6 +26,6 @@ export const startApolloServer = async (schema: any) => {
   await new Promise<void>((resolve) => httpServer.listen({ port }, resolve));
 
   return {
-    url: ` http://localhost:${port}${server.graphqlPath}`,
+    url: `http://localhost:${port}${server.graphqlPath}`,
   };
 };

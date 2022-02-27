@@ -15,6 +15,6 @@ export const isAdmin = rule({ cache: 'contextual' })(
 // Permissions
 export const permissions = shield({
   Query: {
-    books: isAuthenticated,
+    hello: isAuthenticated,
   },
 });
