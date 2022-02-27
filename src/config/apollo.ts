@@ -1,16 +1,19 @@
 import express from 'express';
 import http from 'http';
+import compression from 'compression';
 import depthLimit from 'graphql-depth-limit';
 import { ApolloServer } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import { context } from './context';
 
 export const startApolloServer = async (schema: any) => {
-  const app = express();
-
   const port = process.env.PORT || 4000;
 
+  const app = express();
+  app.use(compression());
+
   const httpServer = http.createServer(app);
+
   const server = new ApolloServer({
     context,
     schema,
