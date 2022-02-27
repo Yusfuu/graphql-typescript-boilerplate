@@ -8,10 +8,9 @@ import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import { context } from './context';
 
 const isProduction = process.env.NODE_ENV === 'production';
+const port = process.env.PORT || 4000;
 
 export const startApolloServer = async (schema: any) => {
-  const port = process.env.PORT || 4000;
-
   const app = express();
   app.use(compression());
   app.use(
