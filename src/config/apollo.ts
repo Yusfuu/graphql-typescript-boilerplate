@@ -6,11 +6,12 @@ import depthLimit from 'graphql-depth-limit';
 import { ApolloServer } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import { context } from './context';
+import { GraphQLSchema } from 'graphql';
 
 const isProduction = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || 4000;
 
-export const startApolloServer = async (schema: any) => {
+export const startApolloServer = async (schema: GraphQLSchema) => {
   const app = express();
   app.use(compression());
   app.use(
