@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@graphql-tools/load-files": "^6.5.3",
-    "@graphql-tools/merge": "^8.2.3",
-    "@graphql-tools/schema": "^8.3.2",
+    "@graphql-tools/merge": "^8.2.4",
+    "@graphql-tools/schema": "^8.3.3",
     "apollo-server-core": "^3.6.4",
     "apollo-server-express": "^3.6.4",
     "compression": "^1.7.4",
