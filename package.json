@@ -14,6 +14,8 @@
     "test:cov": "jest --coverage"
   },
   "dependencies": {
+    "@graphql-codegen/typescript": "^2.4.8",
+    "@graphql-codegen/typescript-resolvers": "^2.6.1",
     "@graphql-tools/load-files": "^6.5.3",
     "@graphql-tools/merge": "^8.2.4",
     "@graphql-tools/schema": "^8.3.3",
@@ -27,15 +29,13 @@
     "express-rate-limit": "^6.3.0",
     "graphql": "^16.3.0",
     "graphql-depth-limit": "^1.1.0",
-    "graphql-middleware": "^6.1.17",
+    "graphql-middleware": "^6.1.18",
     "graphql-shield": "^7.5.0",
     "helmet": "^5.0.2",
     "pm2": "^5.2.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
-    "@graphql-codegen/typescript": "^2.4.7",
-    "@graphql-codegen/typescript-resolvers": "^2.5.4",
     "@types/compression": "^1.7.2",
     "@types/express": "^4.17.13",
     "@types/graphql-depth-limit": "^1.1.3",
