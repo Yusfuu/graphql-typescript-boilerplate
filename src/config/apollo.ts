@@ -26,6 +26,7 @@ export const startApolloServer = async (schema: GraphQLSchema) => {
       return error;
     },
   });
+
   await server.start();
   server.applyMiddleware({ app, path: '/gql' });
   await new Promise<void>((resolve) => httpServer.listen({ port }, resolve));
