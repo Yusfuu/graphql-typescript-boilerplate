@@ -1,7 +1,6 @@
 import express from 'express';
 import http from 'http';
 import compression from 'compression';
-import helmet from 'helmet';
 import depthLimit from 'graphql-depth-limit';
 import { ApolloServer } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
@@ -14,12 +13,6 @@ const port = process.env.PORT || 4000;
 export const startApolloServer = async (schema: GraphQLSchema) => {
   const app = express();
   app.use(compression());
-  app.use(
-    helmet({
-      contentSecurityPolicy: isProduction,
-      crossOriginEmbedderPolicy: isProduction,
-    })
-  );
 
   const httpServer = http.createServer(app);
 
