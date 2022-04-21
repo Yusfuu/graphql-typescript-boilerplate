@@ -6,13 +6,19 @@ import { ApolloServer } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import { context } from './context';
 import { GraphQLSchema } from 'graphql';
+import { graphqlUploadExpress } from 'graphql-upload';
 
 const isProduction = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || 4000;
 
+const uploadOptions = {
+  maxFileSize: 3 * 1024 * 1024, // no larger than 3mb, you can change as needed.
+  maxFiles: 5,
+};
+
 export const startApolloServer = async (schema: GraphQLSchema) => {
   const app = express();
-  app.use(compression());
+  app.use(graphqlUploadExpress(uploadOptions), compression());
 
   const httpServer = http.createServer(app);
 

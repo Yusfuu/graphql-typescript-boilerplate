@@ -13,8 +13,13 @@ export const isAdmin = rule({ cache: 'contextual' })(
 );
 
 // Permissions
-export const permissions = shield({
-  Query: {
-    hello: isAuthenticated,
+export const permissions = shield(
+  {
+    Query: {
+      hello: isAuthenticated,
+    },
   },
-});
+  {
+    allowExternalErrors: process.env.NODE_ENV === 'production',
+  }
+);
