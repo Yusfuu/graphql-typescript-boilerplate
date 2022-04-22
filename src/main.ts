@@ -8,3 +8,8 @@ const schema = applyMiddleware(gql, permissions);
 startApolloServer(schema).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
 });
+
+const bootstrap = async () => {
+  const { url } = await startApolloServer(schema);
+  console.log(`🚀 Server ready at ${url}`);
+};

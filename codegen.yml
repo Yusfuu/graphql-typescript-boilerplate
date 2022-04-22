@@ -1,5 +1,6 @@
 overwrite: true
-schema: 'http://localhost:4000/gql'
+watch: true
+schema: 'src/schema/**/*.ts'
 generates:
   src/generated/types.ts:
     config:
