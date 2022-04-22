@@ -8,7 +8,6 @@ import { context } from './context';
 import { GraphQLSchema } from 'graphql';
 import { graphqlUploadExpress } from 'graphql-upload';
 
-const isProduction = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || 4000;
 
 const uploadOptions = {
@@ -16,7 +15,7 @@ const uploadOptions = {
   maxFiles: 5,
 };
 
-export const startApolloServer = async (schema: GraphQLSchema) => {
+export const bootstrap = async (schema: GraphQLSchema) => {
   const app = express();
   app.use(graphqlUploadExpress(uploadOptions), compression());
 
