@@ -1,8 +1,6 @@
-import { bootstrap } from '@config/apollo';
+import { startApolloServer } from '@config/apollo';
 import { schema } from '@schema/index';
 
-bootstrap(schema)
-  .then(({ url }) => {
-    console.log(`🚀 Server ready at ${url}`);
-  })
+startApolloServer(schema)
+  .then(({ url }) => console.log(`🚀 Server ready at ${url}`))
   .catch(console.error);

@@ -4,9 +4,9 @@ import compression from 'compression';
 import depthLimit from 'graphql-depth-limit';
 import { ApolloServer } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
-import { context } from './context';
 import { GraphQLSchema } from 'graphql';
 import { graphqlUploadExpress } from 'graphql-upload';
+import { context } from './context';
 
 const port = process.env.PORT || 4000;
 
@@ -15,9 +15,8 @@ const uploadOptions = {
   maxFiles: 5,
 };
 
-export const bootstrap = async (schema: GraphQLSchema) => {
+export const startApolloServer = async (schema: GraphQLSchema) => {
   const app = express();
-  app.use(graphqlUploadExpress(uploadOptions), compression());
 
   const httpServer = http.createServer(app);
 
@@ -33,10 +32,17 @@ export const bootstrap = async (schema: GraphQLSchema) => {
   });
 
   await server.start();
-  server.applyMiddleware({ app, path: '/gql' });
+
+  // attach middleware at this point to run before Apollo.
+  app.use(graphqlUploadExpress(uploadOptions));
+  app.use(compression());
+
+  server.applyMiddleware({ app });
   await new Promise<void>((resolve) => httpServer.listen({ port }, resolve));
 
   return {
     url: `http://localhost:${port}${server.graphqlPath}`,
+    server,
+    app,
   };
 };
