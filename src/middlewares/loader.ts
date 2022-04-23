@@ -8,6 +8,9 @@ export const createLoader = (Model: any) => {
   });
 
   return {
-    load: async (id: any) => loader.load(id),
+    load: async (id: string) => loader.load(id),
+    loadMany: async (ids: string[]) => loader.loadMany(ids),
+    clearAll: () => loader.clearAll(),
+    clear: (id: string) => loader.clear(id),
   };
 };
