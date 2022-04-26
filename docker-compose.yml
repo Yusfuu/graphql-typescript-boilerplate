@@ -11,4 +11,4 @@ services:
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
-    command: yarn dev
+    command: yarn nodemon -q -L -w src src/main.ts
