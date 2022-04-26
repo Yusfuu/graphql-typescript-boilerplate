@@ -1,17 +1,5 @@
-FROM node:alpine
-
-WORKDIR /app
-
-COPY package.json yarn.lock ./
-
-RUN yarn install --frozen-lockfile
-
+FROM node:lts-alpine 
+WORKDIR /usr/src/app
+COPY package.json ./
+RUN  npm i
 COPY . .
-
-RUN yarn build
-
-EXPOSE 4000
-
-ENV PORT 4000
-
-CMD ["node", "src/server.js"]

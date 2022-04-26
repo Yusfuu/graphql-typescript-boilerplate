@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.db=void 0;const a=async()=>(process.env.DATABASE_URL,console.log(`👋 Connected to database successfully`),null);exports.db=a
+//# sourceMappingURL=db.js.map
