@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.limiter=void 0;var a=function(a){return a&&a.__esModule?a:{default:a}}(require("express-rate-limit"));const b=a.default({windowMs:9e5,max:100,standardHeaders:!1,legacyHeaders:!1});exports.limiter=b
-//# sourceMappingURL=limiter.js.map

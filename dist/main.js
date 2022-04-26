@@ -1,2 +1,0 @@
-"use strict";var a=require("./config/apollo"),b=require("./schema/index");a.startApolloServer(b.schema).then(({url:a})=>console.log(`🚀 Server ready at ${a}`)).catch(console.error)
-//# sourceMappingURL=main.js.map
