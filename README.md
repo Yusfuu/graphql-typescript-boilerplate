@@ -35,7 +35,7 @@ yarn kill
 Running in production:
 
 ```bash
-yarn start:prod
+yarn prod
 ```
 
 Testing:
