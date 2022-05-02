@@ -13,7 +13,6 @@
       "@lib/*": ["lib/*"],
       "@services/*": ["services/*"],
       "@models/*": ["models/*"],
-      "@controllers/*": ["controllers/*"],
       "@interfaces/*": ["interfaces/*"]
     }
   },
