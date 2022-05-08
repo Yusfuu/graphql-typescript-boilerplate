@@ -19,7 +19,5 @@ export const permissions = shield(
       hello: isAuthenticated,
     },
   },
-  {
-    allowExternalErrors: process.env.NODE_ENV === 'production',
-  }
+  { allowExternalErrors: process.env.NODE_ENV === 'production' }
 );

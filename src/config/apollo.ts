@@ -1,24 +1,23 @@
-import express from 'express';
+import express, { RequestHandler } from 'express';
 import http from 'http';
 import depthLimit from 'graphql-depth-limit';
 import { ApolloServer } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer, Context } from 'apollo-server-core';
 import { GraphQLSchema } from 'graphql';
-import { graphqlUploadExpress } from 'graphql-upload';
 
 interface IConfig {
   schema: GraphQLSchema;
-  context?: Context;
-  port?: number | string;
+  context: Context;
+  middlewares: RequestHandler[];
+  port: number | string;
 }
 
-// upload options middleware
-const uploadOptions = {
-  maxFileSize: 3 * (1024 * 1024), // no larger than 3mb, you can change as needed.
-  maxFiles: 5,
-};
-
-export const createServer = async ({ schema, context, port }: IConfig) => {
+export const createServer = async ({
+  schema,
+  context,
+  middlewares,
+  port,
+}: IConfig) => {
   const app = express();
   const httpServer = http.createServer(app);
 
@@ -33,7 +32,7 @@ export const createServer = async ({ schema, context, port }: IConfig) => {
   await apollo.start();
 
   // attach middleware at this point to run before Apollo.
-  app.use(graphqlUploadExpress(uploadOptions));
+  app.use(middlewares);
 
   apollo.applyMiddleware({ app });
 
