@@ -13,9 +13,10 @@ export const createLoader = (Model: any) => {
 // this is the same as the above but with a different syntax
 
 // export const createDataLoader = (callback: any) => {
-//   return new DataLoader(async (keys) => {
-//     const data = await callback(keys);
-//     return keys.map((key) => data.filter((item: any) => item.id === key));
-//   });
+//   return new DataLoader((keys) =>
+//     callback(keys).then((data: any) =>
+//       keys.map((key) => data.filter((item: any) => item.id === key))
+//     )
+//   );
 // };
 // createDataLoader((keys) => Promise.resolve(keys)).loadMany([]);
