@@ -1,7 +1,9 @@
 import { createServer, context, middlewares, schema } from '@config/index';
 
-const port = process.env.PORT || 4000;
+// load environment variables from a .env file
+import 'dotenv/config';
 
+const port = process.env.PORT || 4000;
 const server = createServer({ schema, context, middlewares, port });
 
 server.then(({ graphqlPath }) => {

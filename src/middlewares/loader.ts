@@ -1,18 +1,21 @@
 import DataLoader from 'dataloader';
 
 /* example of a dataloader for mongodb */
-
-// create a dataloader for the given model
+// create a dataloader for the given model (mongobd)
 export const createLoader = (Model: any) => {
-  const loader = new DataLoader(async (keys) => {
+  return new DataLoader(async (keys) => {
     const data = await Model.find({ _id: { $in: keys } });
     return keys.map((key) => data.filter(({ id }: any) => id === key));
   });
-
-  return {
-    load: async (id: string) => loader.load(id),
-    loadMany: async (ids: string[]) => loader.loadMany(ids),
-    clear: (id: string) => loader.clear(id),
-    clearAll: () => loader.clearAll(),
-  };
 };
+
+// example of a dataloader for any other type of data
+// this is the same as the above but with a different syntax
+
+// export const createDataLoader = (callback: any) => {
+//   return new DataLoader(async (keys) => {
+//     const data = await callback(keys);
+//     return keys.map((key) => data.filter((item: any) => item.id === key));
+//   });
+// };
+// createDataLoader((keys) => Promise.resolve(keys)).loadMany([]);
