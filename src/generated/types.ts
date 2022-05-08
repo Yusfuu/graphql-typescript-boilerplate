@@ -16,6 +16,7 @@ export type Scalars = {
 
 export type Query = {
   __typename?: 'Query';
+  admin?: Maybe<Scalars['String']>;
   hello?: Maybe<Scalars['String']>;
 };
 
@@ -101,6 +102,7 @@ export type ResolversParentTypes = {
 };
 
 export type QueryResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  admin?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   hello?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
 };
 
