@@ -1,5 +1,7 @@
 import DataLoader from 'dataloader';
 
+/* example of a dataloader for mongodb */
+
 // create a dataloader for the given model
 export const createLoader = (Model: any) => {
   const loader = new DataLoader(async (keys) => {

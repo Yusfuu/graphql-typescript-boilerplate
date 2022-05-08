@@ -5,7 +5,5 @@ export interface Context {
 }
 
 export const context = async ({ req }: { req: Request }): Promise<Context> => {
-  return {
-    req,
-  };
+  return { req };
 };
