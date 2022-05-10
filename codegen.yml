@@ -1,6 +1,6 @@
 overwrite: true
 watch: true
-schema: 'src/schema/**/*.ts'
+schema: 'src/graphql/**/*.ts'
 generates:
   src/generated/types.d.ts:
     config:
