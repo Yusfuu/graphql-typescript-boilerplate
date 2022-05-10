@@ -6,6 +6,7 @@ import { applyMiddleware } from 'graphql-middleware';
 import { shield, IRules } from 'graphql-shield';
 import { print } from 'graphql';
 import { writeFileSync } from 'fs';
+import { env } from './env';
 
 const typesPath = join(__dirname, '../graphql/**/typeDefs.*');
 const resolversPath = join(__dirname, '../graphql/**/resolvers.*');
@@ -19,14 +20,15 @@ const typeDefs = mergeTypeDefs(typesArray);
 const resolvers = mergeResolvers(resolversArray);
 const permission = mergeResolvers(permissionArray);
 
-export const permissions = shield(permission as IRules, {
-  allowExternalErrors: true,
+const permissions = shield(permission as IRules, {
+  allowExternalErrors: env.isDevelopment,
 });
 
 const gql = makeExecutableSchema({ typeDefs, resolvers });
 
-export const schema = applyMiddleware(gql, permissions);
-
 // generate schema.graphql
+// you can disable this if you don't need it
 const printedTypeDefs = print(typeDefs);
 writeFileSync('schema.graphql', printedTypeDefs);
+
+export const schema = applyMiddleware(gql, permissions);
