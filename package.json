@@ -22,6 +22,7 @@
     "express-rate-limit": "^6.4.0",
     "graphql": "^16.5.0",
     "graphql-depth-limit": "^1.1.0",
+    "graphql-scalars": "^1.17.0",
     "graphql-shield": "^7.5.0",
     "graphql-upload": "^13.0.0",
     "pm2": "^5.2.0"
@@ -33,8 +34,8 @@
     "@graphql-tools/merge": "^8.2.11",
     "@graphql-tools/schema": "^8.3.11",
     "@swc/cli": "^0.1.57",
-    "@swc/jest": "^0.2.21",
     "@swc/core": "^1.2.179",
+    "@swc/jest": "^0.2.21",
     "@types/express": "^4.17.13",
     "@types/graphql-depth-limit": "^1.1.3",
     "@types/graphql-upload": "^8.0.11",
