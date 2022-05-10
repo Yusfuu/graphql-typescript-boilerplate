@@ -8,17 +8,14 @@ import { print } from 'graphql';
 import { writeFileSync } from 'fs';
 import { env } from './env';
 
-const typesPath = join(__dirname, '../graphql/**/typeDefs.*');
-const resolversPath = join(__dirname, '../graphql/**/resolvers.*');
-const permissionPath = join(__dirname, '../graphql/**/permission.*');
+const combined = (path: string) => {
+  const _path = join(__dirname, path);
+  return loadFilesSync(_path);
+};
 
-const typesArray = loadFilesSync(typesPath);
-const resolversArray = loadFilesSync(resolversPath);
-const permissionArray = loadFilesSync(permissionPath);
-
-const typeDefs = mergeTypeDefs(typesArray);
-const resolvers = mergeResolvers(resolversArray);
-const permission = mergeResolvers(permissionArray);
+const typeDefs = mergeTypeDefs(combined('../graphql/**/typeDefs.*'));
+const resolvers = mergeResolvers(combined('../graphql/**/resolvers.*'));
+const permission = mergeResolvers(combined('../graphql/**/permission.*'));
 
 const permissions = shield(permission as IRules, {
   allowExternalErrors: env.isDevelopment,

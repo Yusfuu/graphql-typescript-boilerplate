@@ -2,7 +2,7 @@ overwrite: true
 watch: true
 schema: 'src/schema/**/*.ts'
 generates:
-  src/generated/types.ts:
+  src/generated/types.d.ts:
     config:
       contextType: ../config/context#Context
     plugins:
