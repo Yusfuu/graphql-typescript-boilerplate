@@ -792,6 +792,16 @@
     tslib "~2.3.0"
     value-or-promise "1.0.11"
 
+"@graphql-tools/batch-execute@8.4.7":
+  version "8.4.7"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-8.4.7.tgz#199d0ec7fbe6539056fdfd28e015c612926a7932"
+  integrity sha512-+ZXikTo8kJ1hJAQrT94sUrwmdL8EcvoDz4HULbb4B8hIFw0PPBaGkEaN8u5ylsCLOEoWIQNe1SwHx9yDhlvnJg==
+  dependencies:
+    "@graphql-tools/utils" "8.6.10"
+    dataloader "2.1.0"
+    tslib "~2.4.0"
+    value-or-promise "1.0.11"
+
 "@graphql-tools/code-file-loader@^7.0.6":
   version "7.2.4"
   resolved "https://registry.yarnpkg.com/@graphql-tools/code-file-loader/-/code-file-loader-7.2.4.tgz#f35bf3050b4375ee5c2da0c34a896392cc7bea3f"
@@ -803,7 +813,7 @@
     tslib "~2.3.0"
     unixify "^1.0.0"
 
-"@graphql-tools/delegate@^8.5.1", "@graphql-tools/delegate@^8.7.7":
+"@graphql-tools/delegate@^8.5.1":
   version "8.7.7"
   resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-8.7.7.tgz#8626e5734eff1643f99b10202bb324c8a4a8c210"
   integrity sha512-Yb9UHG+Upm0M+5FgtWipXM0/Q8Vuuh1Ieod7hFDmAwHGHbmwG0YpcS/NMdxrQAZYWnli9EdnSPgDAFnWLFN+ZQ==
@@ -814,6 +824,19 @@
     dataloader "2.1.0"
     graphql-executor "0.0.23"
     tslib "~2.3.0"
+    value-or-promise "1.0.11"
+
+"@graphql-tools/delegate@^8.7.8":
+  version "8.7.8"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/delegate/-/delegate-8.7.8.tgz#c7e94d66825286615f738367665aa3036d79eff0"
+  integrity sha512-QRpk0B0VD+23mC3ePBLM542TvCXbQhdr0V/AmcnpxQLsV27/NA6fDxxN/zjjjs15M5v9/M2DaBT4rwY9NMMlQA==
+  dependencies:
+    "@graphql-tools/batch-execute" "8.4.7"
+    "@graphql-tools/schema" "8.3.11"
+    "@graphql-tools/utils" "8.6.10"
+    dataloader "2.1.0"
+    graphql-executor "0.0.23"
+    tslib "~2.4.0"
     value-or-promise "1.0.11"
 
 "@graphql-tools/git-loader@^7.0.5":
@@ -899,13 +922,21 @@
     p-limit "3.1.0"
     tslib "~2.3.0"
 
-"@graphql-tools/merge@8.2.10", "@graphql-tools/merge@^8.2.1", "@graphql-tools/merge@^8.2.10", "@graphql-tools/merge@^8.2.3":
+"@graphql-tools/merge@8.2.10", "@graphql-tools/merge@^8.2.1", "@graphql-tools/merge@^8.2.3":
   version "8.2.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.2.10.tgz#fe2fe5ad33dc2d1b0af8751c0c08d18bb6bb6d88"
   integrity sha512-wpg22seOTNfkIO8jFAgo8w1BsT3IS2OTMpkCNf+dvcKSP09SVidYCOliyWHgjDCmpCrvvSjOX855NUKDx/Biew==
   dependencies:
     "@graphql-tools/utils" "8.6.9"
     tslib "~2.3.0"
+
+"@graphql-tools/merge@8.2.11", "@graphql-tools/merge@^8.2.11":
+  version "8.2.11"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.2.11.tgz#0cdc6c9feb32e3392bf0c633881a78ccc1d24368"
+  integrity sha512-fsjJVdsk9GV1jj1Ed2AKLlHYlsf0ZadTK8X5KxFRE1ZSnKqh56BLVX93JrtOIAnsiHkwOK2TC43HGhApF1swpQ==
+  dependencies:
+    "@graphql-tools/utils" "8.6.10"
+    tslib "~2.4.0"
 
 "@graphql-tools/mock@^8.1.2":
   version "8.6.8"
@@ -959,7 +990,7 @@
     relay-compiler "12.0.0"
     tslib "~2.4.0"
 
-"@graphql-tools/schema@8.3.10", "@graphql-tools/schema@^8.0.0", "@graphql-tools/schema@^8.1.2", "@graphql-tools/schema@^8.3.10", "@graphql-tools/schema@^8.3.2":
+"@graphql-tools/schema@8.3.10", "@graphql-tools/schema@^8.0.0", "@graphql-tools/schema@^8.1.2", "@graphql-tools/schema@^8.3.2":
   version "8.3.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-8.3.10.tgz#c3e373e6ad854f533fc7e55859dd8f9e81de30dd"
   integrity sha512-tfhjSTi3OzheDrVzG7rkPZg2BbQjmZRLM2vvQoM2b1TnUwgUIbpAgcnf+AWDLRsoCOWlezeLgij1BLeAR0Q0jg==
@@ -967,6 +998,16 @@
     "@graphql-tools/merge" "8.2.10"
     "@graphql-tools/utils" "8.6.9"
     tslib "~2.3.0"
+    value-or-promise "1.0.11"
+
+"@graphql-tools/schema@8.3.11", "@graphql-tools/schema@^8.3.11":
+  version "8.3.11"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-8.3.11.tgz#c0606b301852820a46042ebb888fd09cc402518a"
+  integrity sha512-esMEnbyXbp8B5VEI4o395+x0G7Qmz3JSX5onFBF8HeLYcqWJasY5vBuWkO18VxrZpEnvnryodP6Y00bVag9O3Q==
+  dependencies:
+    "@graphql-tools/merge" "8.2.11"
+    "@graphql-tools/utils" "8.6.10"
+    tslib "~2.4.0"
     value-or-promise "1.0.11"
 
 "@graphql-tools/schema@8.3.2":
@@ -3659,13 +3700,13 @@ graphql-executor@0.0.23:
   resolved "https://registry.yarnpkg.com/graphql-executor/-/graphql-executor-0.0.23.tgz#205c1764b39ee0fcf611553865770f37b45851a2"
   integrity sha512-3Ivlyfjaw3BWmGtUSnMpP/a4dcXCp0mJtj0PiPG14OKUizaMKlSEX+LX2Qed0LrxwniIwvU6B4w/koVjEPyWJg==
 
-graphql-middleware@^6.1.25:
-  version "6.1.25"
-  resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-6.1.25.tgz#59a8b5cd2efc1ef222da608d4fcda27ef38a93bd"
-  integrity sha512-DTJu28rptkbM29Q0fy0uoLdyVHahZjUoxsGnAlYVGnlhSwFBzbS9Jsd9RTH/cJaqfFqSKMYU++ask93CgiRbOg==
+graphql-middleware@^6.1.26:
+  version "6.1.26"
+  resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-6.1.26.tgz#d79e4e4990b7947ae8cfd37132d2bab61ad1a430"
+  integrity sha512-ij1ErDLgqqwgnH1Q+/cKTtPFzXTnIumbPN1OuSHIlL2tDBEFUXQS0Xa1qxPhE8gCtFt8NezVS+VL3R20v0Fdyw==
   dependencies:
-    "@graphql-tools/delegate" "^8.7.7"
-    "@graphql-tools/schema" "^8.3.10"
+    "@graphql-tools/delegate" "^8.7.8"
+    "@graphql-tools/schema" "^8.3.11"
 
 graphql-request@^4.0.0:
   version "4.1.0"
