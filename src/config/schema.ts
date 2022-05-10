@@ -4,10 +4,12 @@ import { mergeTypeDefs, mergeResolvers } from '@graphql-tools/merge';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import { applyMiddleware } from 'graphql-middleware';
 import { shield, IRules } from 'graphql-shield';
+import { print } from 'graphql';
+import { writeFileSync } from 'fs';
 
-const typesPath = join(__dirname, '../schema/**/typeDefs.*');
-const resolversPath = join(__dirname, '../schema/**/resolvers.*');
-const permissionPath = join(__dirname, '../schema/**/permission.*');
+const typesPath = join(__dirname, '../graphql/**/typeDefs.*');
+const resolversPath = join(__dirname, '../graphql/**/resolvers.*');
+const permissionPath = join(__dirname, '../graphql/**/permission.*');
 
 const typesArray = loadFilesSync(typesPath);
 const resolversArray = loadFilesSync(resolversPath);
@@ -24,3 +26,7 @@ export const permissions = shield(permission as IRules, {
 const gql = makeExecutableSchema({ typeDefs, resolvers });
 
 export const schema = applyMiddleware(gql, permissions);
+
+// generate schema.graphql
+const printedTypeDefs = print(typeDefs);
+writeFileSync('schema.graphql', printedTypeDefs);
