@@ -16,8 +16,14 @@ export type Scalars = {
 
 export type Query = {
   __typename?: 'Query';
-  admin?: Maybe<Scalars['String']>;
-  hello?: Maybe<Scalars['String']>;
+  user: User;
+};
+
+export type User = {
+  __typename?: 'User';
+  email: Scalars['String'];
+  id: Scalars['ID'];
+  name: Scalars['String'];
 };
 
 
@@ -90,23 +96,34 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  ID: ResolverTypeWrapper<Scalars['ID']>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  User: ResolverTypeWrapper<User>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Boolean: Scalars['Boolean'];
+  ID: Scalars['ID'];
   Query: {};
   String: Scalars['String'];
+  User: User;
 };
 
 export type QueryResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  admin?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  hello?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
+};
+
+export type UserResolvers<ContextType = Context, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type Resolvers<ContextType = Context> = {
   Query?: QueryResolvers<ContextType>;
+  User?: UserResolvers<ContextType>;
 };
 

@@ -1,8 +1,15 @@
 import type { Resolvers } from '@generated/types';
+import { faker } from '@faker-js/faker';
 
-// Provide resolver functions for your schema fields
 export const resolvers: Resolvers = {
   Query: {
-    hello: () => 'Hello world! 👋',
+    user: (parent, args) => {
+      const user = {
+        id: faker.datatype.uuid(),
+        name: faker.name.firstName(),
+        email: faker.internet.email(),
+      };
+      return user;
+    },
   },
 };
