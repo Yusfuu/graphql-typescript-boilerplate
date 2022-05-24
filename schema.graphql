@@ -1,12 +1,11 @@
-type Query {
-  admin: String
-  user: User!
-}
-
 type User {
   id: ID!
   name: String!
   email: String!
+}
+
+type Query {
+  user: User!
 }
 
 schema {
