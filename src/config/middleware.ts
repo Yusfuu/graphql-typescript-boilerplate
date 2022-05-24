@@ -1,4 +1,4 @@
-import { graphqlUploadExpress } from 'graphql-upload';
+import graphqlUploadExpress from 'graphql-upload/graphqlUploadExpress.js';
 import rateLimit from 'express-rate-limit';
 
 const limiter = rateLimit({
