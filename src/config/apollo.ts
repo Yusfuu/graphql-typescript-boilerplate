@@ -12,12 +12,7 @@ interface IConfig {
   port: number | string;
 }
 
-export const createServer = async ({
-  schema,
-  context,
-  middlewares,
-  port,
-}: IConfig) => {
+export const createServer = async ({ schema, context, middlewares, port }: IConfig) => {
   const app = express();
   const httpServer = http.createServer(app);
 
