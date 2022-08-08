@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@graphql-tools/load-files": "^6.6.0",
-    "@graphql-tools/merge": "^8.3.0",
-    "@graphql-tools/schema": "^8.5.0",
+    "@graphql-tools/merge": "^8.3.1",
+    "@graphql-tools/schema": "^8.5.1",
     "apollo-server-core": "^3.10.0",
     "apollo-server-express": "^3.10.0",
     "dataloader": "^2.1.0",
@@ -31,9 +31,9 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.3.0",
-    "@graphql-codegen/cli": "^2.11.0",
-    "@graphql-codegen/typescript": "^2.7.2",
-    "@graphql-codegen/typescript-resolvers": "^2.7.2",
+    "@graphql-codegen/cli": "^2.11.4",
+    "@graphql-codegen/typescript": "^2.7.3",
+    "@graphql-codegen/typescript-resolvers": "^2.7.3",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.219",
     "@swc/jest": "^0.2.22",
